@@ -17,12 +17,36 @@
   <body>
     <header>
       <h1>osian es el mejor😊</h1>
+
+      <iframe src="https://en.wikipedia.org/wiki/Main_Page" width="100%" height="200px" style="border:none;"></iframe>
+
+      
+
       <nav>
         <a href="#experiencia">experience</a>
         <a href="#proyectos">proyects</a>
         <a href="#">home</a>
       </nav>
     </header>
+
+<dialog id="modal">
+  <h1>Did you know you could do this?</h1>
+  <p>and it's native</p>
+  <button id="quit">close modal</button>
+</dialog>
+
+<button id="show">see more info</button>
+
+<script>
+window.show.addEventListener('click', ()=> {
+  window.modal.showModal()
+})
+window.quit.addEventListener('click', ()=> {
+  window.modal.close()
+})
+  
+</script>
+
     <video
       width="200px"
       height="200px"
@@ -55,8 +79,7 @@
           <img
             loading="lazy"
             id="picLeia-Osian"
-            width="150"
-            height="150"
+            style="width: 30%; aspect-ratio:1/1"
             src="/images/foto perfil slack.jpg"
             alt="Osian's image with his dog, Leia"
             title="Osian's picture"
