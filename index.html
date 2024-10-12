@@ -20,8 +20,10 @@
       <nav>
         <a href="#experiencia">experience</a>
         <a href="#proyectos">proyects</a>
+        <a href="#">home</a>
       </nav>
     </header>
+    <video control src="https://www.youtube.com/watch?v=n9cbsOPjXJ4"></video>
     <main>
       <p>no me lo creo, este tio es un <strong>fraude</strong></p>
 
@@ -80,10 +82,58 @@
             <p>me parece que es remarcable</p>
           </small>
           <section>
+            <h2>Frequently asked questions</h2>
+            <details>
+              <summary>What are your studies?</summary>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+                pariatur quis perferendis necessitatibus! Dolor officiis,
+                debitis molestiae excepturi enim porro vel suscipit accusamus
+                neque facere libero id asperiores aut expedita!
+              </p>
+            </details>
+            <details open>
+              <summary>What are your studies?</summary>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+                pariatur quis perferendis necessitatibus! Dolor officiis,
+                debitis molestiae excepturi enim porro vel suscipit accusamus
+                neque facere libero id asperiores aut expedita!
+              </p>
+            </details>
+            <details>
+              <summary>What are your studies?</summary>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+                pariatur quis perferendis necessitatibus! Dolor officiis,
+                debitis molestiae excepturi enim porro vel suscipit accusamus
+                neque facere libero id asperiores aut expedita!
+              </p>
+            </details>
+          </section>
+          <section>
             <h2>Formulario de contacto</h2>
             <form method="post" action="/">
               <fieldset>
                 <legend>Informacion personal</legend>
+
+                <div>
+                  <label for="terms">Accept the terms?</label>
+                  <input type="checkbox" id="terms" name="terms" required />
+                </div>
+
+                <div>
+                  <datalist id="Languages">
+                    <option value="Javascript"></option>
+                    <option value="Python"></option>
+                    <option value="Java"></option>
+                    <option value="C+"></option>
+                  </datalist>
+                  <label>
+                    What language do you need help with?
+                    <input list="Languages" name="Languages" />
+                  </label>
+                </div>
 
                 <label for="name">Nombre:</label>
                 <input
@@ -91,6 +141,7 @@
                   id="name"
                   name="name"
                   placeholder="Your Name"
+                  required
                 />
                 <div>
                   <label for="email">Email:</label>
@@ -99,16 +150,24 @@
                     id="email"
                     name="email"
                     placeholder="Your Email"
+                    required
                   />
                 </div>
               </fieldset>
               <fieldset>
                 <legend>informacion adicional</legend>
                 <div>
-                    <label for="telefono">Telefono:</label>
-                <input type="tel" name="info" placeholder="extra info" id="telefono">
-            </div>
+                  <label for="telefono">Telefono:</label>
+                  <input
+                    type="tel"
+                    name="info"
+                    placeholder="extra info"
+                    id="telefono"
+                    pattern="[0-9]{9}"
+                  />
+                </div>
               </fieldset>
+              <input type="submit" value="enviar contacto" />
             </form>
           </section>
           <a href="mailto:osianjorge@gmail.com">send me an email</a>
