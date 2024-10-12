@@ -27,7 +27,66 @@
         <a href="#proyectos">proyects</a>
         <a href="#">home</a>
       </nav>
+
     </header>
+    <div>
+      <canvas id="myCanvas" width="500" height="400" style="border:4px solid rgb(216, 68, 68);">
+        <img id="myImage" src="images/foto_osian.jpg" style="display:none;" />
+        Tu navegador no soporta la etiqueta canvas.
+      </canvas>
+      <button id="startStopButton">Start Animation</button>
+      <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const img = document.getElementById('myImage');
+        let x = 50;
+        let y = 50;
+        let dx = 2;
+        let dy = 2;
+        const radius = 50; 
+        let isAnimating = false;
+
+        function drawBall() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);  
+          ctx.beginPath();
+          ctx.arc(x, y, 20, 0, Math.PI * 2);  
+          ctx.drawImage(img, x - radius, y - radius, radius * 2, radius * 2);
+          x += dx;
+          y += dy;
+
+          if (x + 20 > canvas.width || x - 20 < 0) {
+            dx = -dx;
+          }
+          if (y + 20 > canvas.height || y - 20 < 0) {
+            dy = -dy;
+          }
+        }
+
+        function animate() {
+          drawBall();
+          requestAnimationFrame(animate);  
+        }
+
+        document.getElementById('startStopButton').addEventListener('click', function() {
+          if (!isAnimating) {
+            isAnimating = true;
+            animate();
+            this.textContent = 'Stop Animation';
+          } 
+          if (isAnimating) {
+            isAnimating = false;
+            cancelAnimationFrame(animate);
+            this.textContent = 'Start Animation';
+          } else {
+            isAnimating = false;
+            cancelAnimationFrame(animate);
+            this.textContent = 'Start Animation';
+          }
+        });
+      </script>
+    </div>
+    
+
 
 <dialog id="modal">
   <h1>Did you know you could do this?</h1>
@@ -52,7 +111,7 @@ window.quit.addEventListener('click', ()=> {
       height="200px"
       controls
       loop
-      poster="images/foto perfil slack.jpg"
+      poster="images/foto_osian.jpg"
       src="/video/acordes.mp4"
     ></video>
     <div>
@@ -75,12 +134,12 @@ window.quit.addEventListener('click', ()=> {
           <li class="list-item">inglaterra-2002</li>
           <li class="list-item">USA-2004</li>
         </ol>
-        <a download="" href="images/foto perfil slack.jpg" target="_blank">
+        <a download="" href="images/foto_osian.jpg" target="_blank">
           <img
             loading="lazy"
             id="picLeia-Osian"
             style="width: 30%; aspect-ratio:1/1"
-            src="/images/foto perfil slack.jpg"
+            src="/images/foto_osian.jpg"
             alt="Osian's image with his dog, Leia"
             title="Osian's picture"
           />
