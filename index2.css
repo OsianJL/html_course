@@ -6,4 +6,5 @@ html  {
 body {
     margin: auto; 
     flex-direction: center;
+    background-color: rgb(92, 231, 196);
 }
