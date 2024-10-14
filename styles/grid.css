@@ -7,10 +7,35 @@ body {
     border: 3px solid black; 
     border-radius: 10px;
     display: grid;
+    grid-template-columns: repeat(
+        auto-fill, 
+        minmax(200px, 1fr)
+    );
+    grid-template-rows: repeat(4, 100px);
+    column-gap: 10px;
+    row-gap: 10px; 
+    padding: 10px; 
+    min-width: 200px; 
+    max-height: vh;
 }
 
 .container div {
     background-color: rgb(139, 151, 147);
     border: 3px solid brown;
     border-radius: 15px;
+}  
+
+.container div:first-child {
+    background-color: green;
+    border:5px solid greenyellow; 
+    grid-row-start: 1; 
+    grid-row-end: 3;
+    grid-column-start: 1; 
+    grid-column-end: 3;
+}
+
+.container div:nth-child(3) {
+    background-color: rgb(26, 29, 202);
+    border:5px solid greenyellow; 
+   grid-row-start: span 2;
 }
