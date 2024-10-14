@@ -12,8 +12,8 @@
       content="Osian porfolio very interesting to see all he achieved in his amazing and rare life"
     />
 
-    <link rel="icon" type="image/jpg" href="images/foto perfil slack.jpg" />
-    <link rel="stylesheet" href="index2.css">
+    <link rel="icon" type="image/jpg" href="../assets/images/foto_osian.jpg" />
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <header>
@@ -30,7 +30,7 @@
       </nav>
 
     </header>
-    <div>
+    <!-- <div>
       <canvas id="myCanvas" width="500" height="400" style="border:4px solid rgb(216, 68, 68);">
         <img id="myImage" src="images/foto_osian.jpg" style="display:none;" />
         Tu navegador no soporta la etiqueta canvas.
@@ -85,8 +85,69 @@
           }
         });
       </script>
-    </div>
+    </div> -->
+    <div>
+      <canvas id="myCanvas" width="500" height="400" style="border:4px solid rgb(216, 68, 68);">
+        Tu navegador no soporta la etiqueta canvas.
+      </canvas>
+      <button id="startStopButton">Start Animation</button>
+      <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        let isAnimating = false;
+        let lines = [];
+        const maxLines = 6;
+        const lineHeight = 30;
+        const possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+        let animationFrameId;
+        const animationSpeed = 100; // Controla la velocidad de la animación en milisegundos
     
+        function getRandomLine() {
+          let line = '';
+          const length = Math.floor(Math.random() * 50) + 10;
+          for (let i = 0; i < length; i++) {
+            line += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
+          }
+          return line;
+        }
+    
+        function drawScreen() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = 'black';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.font = '20px monospace';
+          ctx.fillStyle = 'green';
+    
+          for (let i = 0; i < lines.length; i++) {
+            ctx.fillText(lines[i], 10, lineHeight * (i + 1));
+          }
+        }
+    
+        function animate() {
+          if (!isAnimating) return;
+          lines.push(getRandomLine());
+          if (lines.length > maxLines) {
+            lines.shift();
+          }
+          drawScreen();
+          setTimeout(() => {
+            animationFrameId = requestAnimationFrame(animate);
+          }, animationSpeed);
+        }
+    
+        document.getElementById('startStopButton').addEventListener('click', function() {
+          if (!isAnimating) {
+            isAnimating = true;
+            animate();
+            this.textContent = 'Stop Animation';
+          } else {
+            isAnimating = false;
+            cancelAnimationFrame(animationFrameId);
+            this.textContent = 'Start Animation';
+          }
+        });
+      </script>
+    </div>
 
 
 <dialog id="modal">
@@ -112,13 +173,13 @@ window.quit.addEventListener('click', ()=> {
       height="200px"
       controls
       loop
-      poster="images/foto_osian.jpg"
-      src="/video/acordes.mp4"
+      poster="../assets/images/foto_osian.jpg"
+      src="../assets/video/acordes.mp4"
     ></video>
     <div>
       <h5>donde esta mi audio</h5>
 
-      <audio controls src="/audio/incubus.mp3"><audio controls/>
+      <audio controls src="../assets/audio/incubus.mp3"><audio controls/>
     </div>
     <main>
       <p>no me lo creo, este tio es un <strong>fraude</strong></p>
@@ -135,12 +196,12 @@ window.quit.addEventListener('click', ()=> {
           <li class="list-item">inglaterra-2002</li>
           <li class="list-item">USA-2004</li>
         </ol>
-        <a download="" href="images/foto_osian.jpg" target="_blank">
+        <a download="" href="../assets/images/foto_osian.jpg" target="_blank">
           <img
             loading="lazy"
             id="picLeia-Osian"
             style="width: 30%; aspect-ratio:1/1"
-            src="/images/foto_osian.jpg"
+            src="../assets/images/foto_osian.jpg"
             alt="Osian's image with his dog, Leia"
             title="Osian's picture"
           />

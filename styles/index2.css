@@ -1,0 +1,53 @@
+html  {
+    display: flex; 
+}
+
+
+body {
+    margin: auto; 
+    flex-direction: center;
+    background-color: rgb(92, 231, 196);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: rgb(133 22 22);
+    font-size: 50px; 
+}
+h2 {
+    color: rgb(133 22 22);
+    font-size: 40px; 
+}
+
+h1:hover {
+    outline: blue 30px solid;
+    color: rgb(63, 209, 30); 
+}
+h1:active {
+    outline: blue 30px solid;
+    color: rgb(189, 19, 215); 
+}
+
+h1:active {
+    outline: blue 30px solid;
+    color: rgb(189, 19, 215); 
+}
+
+a {
+    color: rgb(12, 13, 11)
+}
+
+.link {
+    color: orange; 
+}
+
+li:first-child {
+    color: pink;
+    font-size: 30px;
+}
+
+#modal {
+    border-radius: 20px; 
+    border: red 3px solid; 
+    
+}
