@@ -1,0 +1,16 @@
+body {
+    background: #9ef;
+}
+
+.container {
+    background: lightsalmon;
+    border: 3px solid black; 
+    border-radius: 10px;
+    display: grid;
+}
+
+.container div {
+    background-color: rgb(139, 151, 147);
+    border: 3px solid brown;
+    border-radius: 15px;
+}
