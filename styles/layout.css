@@ -13,6 +13,15 @@
      "footer footer footer";
 }
 
+@media (width > 400px) {
+    .container {
+        grid-template-areas: 
+        "header header ."
+     "sidebar content content"
+     "footer footer footer";
+    }
+}
+
 .container header  {
 background-color: blue;
 grid-area: header; 

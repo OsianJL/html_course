@@ -1,0 +1,23 @@
+.pulser {
+    width: 100px;
+    height: 100px;
+    background: #6EE;
+    border: 5px solid #E96; 
+    border-radius: 100%; 
+    position: relative; 
+    transition-duration: 2s;
+    transition-property: border, scale; 
+}
+
+.pulser:hover  {
+    scale: 2;
+    background:#E96 ;
+    border: 5px solid #6EE; 
+    box-shadow: 0 0 20px #6EE;
+}
+
+body {
+    display: grid; 
+    place-content: center; 
+    min-height: 50vh;
+}
