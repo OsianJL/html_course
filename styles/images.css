@@ -1,0 +1,40 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0; 
+    background-color: black;
+    color: white; 
+}
+
+h1 {
+    text-align: center;
+    margin: 0; 
+    padding: 20px; 
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0; 
+    animation: enhance-header linear both;
+}
+
+section {
+    columns: 2; 
+    padding: 16px 32px;
+    column-gap: 32px;
+}
+
+img {
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+}
+
+@keyframes enhance-header {
+    to {
+        background-color: rgb(255, 255, 255, .4);
+        backdrop-filter: blur(30px);
+        font-size: 24px;
+        color: black
+    }
+    
+}
